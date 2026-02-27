@@ -1,6 +1,6 @@
 services:
   php:
-    image: php:8.3-cli
+    image: php:8.4-cli
     container_name: php-container
     working_dir: /app
     volumes:
