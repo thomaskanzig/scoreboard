@@ -7,8 +7,8 @@ namespace App\Scoreboard\Model;
 final class Game
 {
     public function __construct(
-        public readonly Team $homeTeam,
-        public readonly Team $awayTeam,
+        public readonly string $homeTeam,
+        public readonly string $awayTeam,
         private int $homeScore = 0,
         private int $awayScore = 0,
         public readonly int $startedOrder = 0,
@@ -37,12 +37,6 @@ final class Game
 
     public function toSummaryString(): string
     {
-        return sprintf(
-            '%s %d - %s %d',
-            $this->homeTeam->name(),
-            $this->homeScore,
-            $this->awayTeam->name(),
-            $this->awayScore
-        );
+        return sprintf('%s %d - %s %d', $this->homeTeam, $this->homeScore, $this->awayTeam, $this->awayScore);
     }
 }
