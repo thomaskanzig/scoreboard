@@ -5,22 +5,21 @@ This repository contains the implementation of a **Live Football World Cup Score
 ## Requirements
 
 - **Docker** installed
+- **Docker Compose** available (`docker compose`)
 
 ---
 
-## Project Setup (Install dependencies)
+## Run tests
+> Run all commands **from the project root** (the folder that contains `composer.json`).
 
-From the project root:
-
+One-off test run (no containers need to stay running):
 ```bash
-docker compose run --rm composer install
+docker compose run --rm php bin/phpunit --testdox
 ```
 
-## Run tests
-
-From the project root:
+Keep a PHP container running and execute tests inside it:
 ```bash
 docker compose up -d
 docker exec -it php-container bash
-php bin/phpunit
+php bin/phpunit --testdox
 ```
