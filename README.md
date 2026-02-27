@@ -13,12 +13,12 @@ This repository contains the implementation of a **Live Football World Cup Score
 From the project root:
 
 ```bash
-docker compose up -d
 docker compose run --rm composer install
+```
 
 ## Run tests
 
-Access the root project in docker container:
+From the project root:
 ```bash
 docker compose up -d
 docker exec -it php-container bash
