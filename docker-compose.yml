@@ -1,0 +1,16 @@
+services:
+  php:
+    image: php:8.3-cli
+    container_name: php-container
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: ["sleep", "infinity"]
+
+  composer:
+    image: composer:2
+    container_name: composer-container
+    working_dir: /app
+    volumes:
+      - ./:/app
+    entrypoint: ["composer"]
